@@ -7,7 +7,13 @@ __version__ = '0.0.1'
 
 from .emoji import emoji
 
+
 def pymoji(text):
-	if text[0] <> text[:-1] and text[0] <> ':':
-		text = ':%s:' % text
-	return emoji(text)
+    single_word = len(text.split(' ')) < 2
+    first_and_last_dont_match = text[0] != text[-1:]
+    first_character_is_colon = text[0] != ':'
+
+    if first_and_last_dont_match and first_character_is_colon and single_word:
+        text = ':%s:' % text
+
+    return emoji(text)
