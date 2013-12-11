@@ -1,4 +1,4 @@
-from unittest2 import TestCase
+from pymoji.compat import TestCase
 
 
 class BaseTestCase(TestCase):
