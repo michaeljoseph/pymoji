@@ -8,9 +8,6 @@ python:
 install:
   - if [[ $TRAVIS_PYTHON_VERSION == 2* ]]; then pip install -r requirements-py2.txt --use-mirrors; fi
   - if [[ $TRAVIS_PYTHON_VERSION == 3* ]]; then pip install -r requirements.txt --use-mirrors; fi
-
-install:
-    - pip install -r requirements.txt --use-mirrors
 script:
     - nosetests --with-coverage --cover-package=pymoji
     - flake8 setup.py pymoji tests
